@@ -109,12 +109,15 @@ namespace WebApp4.Controllers
 
                 }
             }
-            catch (DbUpdateException /* ex */)
+            catch (DbUpdateException  ex )
             {
-                //Log the error (uncomment ex variable name and write a log.
-                ModelState.AddModelError("", "Unable to save changes. " +
+                string msg = "Unable to save changes. " +
                     "Try again, and if the problem persists " +
-                    "see your system administrator.");
+                    "see your system administrator.";
+                if (ex.InnerException.Message.Contains("UNIQUE"))
+                    msg = "Attribute Code must be unique";
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", msg);
             }
             return View(mgAnaArt);
         }
