@@ -1,0 +1,94 @@
+﻿@model IEnumerable<WebApp4.Models.PkAnag>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkanNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkanData)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkanDesc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkanNote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkanScaric)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkanYear)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PkanNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PkanData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PkanDesc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PkanNote)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PkanScaric)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PkanYear)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PkanId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PkanId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PkanId">Delete</a> |
+                    <a asp-action="..\PkArticolis\Add" asp-route-id="@item.PkanId">Add New Component</a> |
+                    <a asp-action="Accept" asp-route-id="@item.PkanId">Accept</a>
+                </td>
+            </tr>
+            <tr>
+                    <tr>
+                        <th></th>
+                        <th>Component</th>
+                        <th>Qta</th>
+                    </tr>
+        
+                    @foreach (var itemDetail in item.PkArticoli)
+                    {
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => itemDetail.PkarMgaa.MgaaDescr)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => itemDetail.PkarQtaPick)
+                            </td>
+                            <td>
+                                <a asp-action="..\PkArticolis\Edit" asp-route-id="@itemDetail.PkarId">Edit</a> |
+                                <a asp-action="..\PkArticolis\Details" asp-route-id="@itemDetail.PkarId">Details</a> |
+                                <a asp-action="..\PkArticolis\Delete" asp-route-id="@itemDetail.PkarId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@model WebApp4.Models.MgRegistrazioni
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MgRegistrazioni</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgData)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgData)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgDocRif)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgDocRif)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgDataRif)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgDataRif)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgCreationDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgCreationDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgLastEditDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgLastEditDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgCreationUserUsr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgCreationUserUsr.UsrLogin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgLastEditUserUsr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgLastEditUserUsr.UsrLogin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgMbcs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgMbcs.MbcsCaus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgrgMbmg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgrgMbmg.MbmgCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MgrgId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

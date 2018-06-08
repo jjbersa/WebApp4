@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApp4.Models.ViewModels.WarehouseMaster>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                qta
+            </th>
+            <th>
+                Code
+            </th>
+            <th>
+                Component
+            </th>
+        <tr>
+            <th></th>
+            <th>Pallet</th>
+            <th>Warehouse</th>
+            <th>Ubication</th>
+        </tr>
+        @*<th>
+            Pallet
+        </th>
+        <th>
+            Warehouse
+        </th>
+        <th>
+            Ubication
+        </th>*@
+
+<th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="font-weight:bold">
+                    @Html.DisplayFor(modelItem => item.qta)
+                </td>
+                <td style="font-weight:bold">
+                    @Html.DisplayFor(modelItem => item.code)
+                </td>
+                <td style="font-weight:bold">
+                    @Html.DisplayFor(modelItem => item.component)
+                </td>
+            </tr>
+            <tr>
+            @*<tr>
+                <th></th>
+                <th>Pallet</th>
+                <th>Warehouse</th>
+                <th>Ubication</th>
+            </tr>*@
+            @foreach (var itemDetail in item.warehouseDetail)
+            {
+            <tr>
+                <td></td>
+                <td>
+                    @Html.DisplayFor(modelItemDetail => itemDetail.pallet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItemDetail => itemDetail.warehouse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItemDetail => itemDetail.ubication)
+                </td>
+            </tr>
+        }
+            </tr>
+        }
+        </tbody>
+    </table>

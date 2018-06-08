@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebApp4.Models.MgAnaUbicazioni>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgauCodice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgauCodCompl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgauDescr)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgauTreeCtrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgauDataIns)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgauLivello)
+                </th>
+               
+            <th>
+                @Html.DisplayNameFor(model => model.MgauMbmg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgauCodice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgauCodCompl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgauDescr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgauTreeCtrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgauDataIns)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgauLivello)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.MgauMbmg.MbmgCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MgauId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MgauId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MgauId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

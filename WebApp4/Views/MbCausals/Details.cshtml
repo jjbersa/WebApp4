@@ -1,0 +1,42 @@
+﻿@model WebApp4.Models.MbCausal
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MbCausal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MbcsCaus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbcsCaus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MbcsDescr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbcsDescr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MbcsMbmg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbcsMbmg.MbmgCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MbcsMgau)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbcsMgau.MgauCodCompl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MbcsId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

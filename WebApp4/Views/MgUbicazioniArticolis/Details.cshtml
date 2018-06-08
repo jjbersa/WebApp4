@@ -1,0 +1,36 @@
+﻿@model WebApp4.Models.MgUbicazioniArticoli
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MgUbicazioniArticoli</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MguaMbmg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MguaMbmg.MbmgCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MguaMgaa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MguaMgaa.MgaaDescr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MguaMgau)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MguaMgau.MgauCodCompl)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MguaId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

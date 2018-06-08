@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApp4.Models.MbCausal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MbcsCaus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MbcsDescr)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MbcsMbmg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MbcsMgau)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MbcsCaus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MbcsDescr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MbcsMbmg.MbmgCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MbcsMgau.MgauCodCompl)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MbcsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MbcsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MbcsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

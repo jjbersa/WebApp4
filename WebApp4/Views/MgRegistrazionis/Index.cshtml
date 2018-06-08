@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApp4.Models.MgRegistrazioni>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgrgData)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgrgNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgrgDocRif)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgrgDataRif)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgrgCreationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgrgLastEditDate)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgrgCreationUserUsr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgrgLastEditUserUsr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgrgMbcs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgrgMbmg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgDocRif)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgDataRif)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgCreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgLastEditDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgCreationUserUsr.UsrLogin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgLastEditUserUsr.UsrLogin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgMbcs.MbcsCaus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgrgMbmg.MbmgCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MgrgId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MgrgId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MgrgId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,81 @@
+﻿@model WebApp4.Models.PkAnag
+
+@{
+    ViewData["Title"] = "Accept";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to Accept this?</h3>
+<div>
+    <h4>PkAnag</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PkanNum)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkanNum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkanData)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkanData)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkanDesc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkanDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkanNote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkanNote)
+        </dd>
+        @*<dt>
+                @Html.DisplayNameFor(model => model.PkanScaric)
+            </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkanScaric)
+        </dd>*@
+        <dt>
+            @Html.DisplayNameFor(model => model.PkanYear)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkanYear)
+        </dd>
+    </dl>
+    <table class="table">
+
+        <tr>
+            <th>Component</th>
+            <th>Qta</th>
+        </tr>
+        @foreach (var item in Model.PkArticoli)
+                {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarMgaa.MgaaDescr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarQtaPick)
+            </td>
+            @*<td>
+                    <a asp-action="..\PkArticolis\Edit" asp-route-id="@item.PkarId">Edit</a> |
+                    <a asp-action="..\PkArticolis\Details" asp-route-id="@item.PkarId">Details</a> |
+                    <a asp-action="..\PkArticolis\Delete" asp-route-id="@item.PkarId">Delete</a>
+                </td>*@
+        </tr>
+                }
+    </table>
+
+    <form asp-action="Accept">
+        <input type="hidden" asp-for="PkanId" />
+        <input type="submit" value="Accept" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

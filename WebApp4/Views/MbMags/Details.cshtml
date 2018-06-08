@@ -1,0 +1,42 @@
+﻿@model WebApp4.Models.MbMag
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MbMag</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MbmgMag)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbmgMag)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MbmgDescr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbmgDescr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MbmgDataFinVal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbmgDataFinVal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MbmgCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MbmgCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MbmgId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,99 @@
+﻿@model WebApp4.Models.MgMovimenti
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MgMovimenti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvProg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvProg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvQuantita)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvQuantita)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvIdRegDest)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvIdRegDest)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvIdRegProv)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvIdRegProv)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvCodUbi)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvCodUbi)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvDataIns)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvDataIns)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvNote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvNote)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvMgaa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvMgaa.MgaaDescr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvMgau)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvMgau.MgauCodCompl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvMgrg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvMgrg.MgrgId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvPkan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvPkan.PkanDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvPkar)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvPkar.PkarId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgmvUsr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgmvUsr.UsrLogin)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MgmvId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

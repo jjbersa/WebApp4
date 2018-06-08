@@ -1,0 +1,107 @@
+﻿@model IEnumerable<WebApp4.Models.MgMovimenti>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgmvProg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgmvQuantita)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgmvIdRegDest)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgmvIdRegProv)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgmvCodUbi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgmvDataIns)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MgmvNote)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgmvMgaa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgmvMgau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgmvMgrg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgmvPkan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgmvPkar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MgmvUsr)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvProg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvQuantita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvIdRegDest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvIdRegProv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvCodUbi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvDataIns)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvMgaa.MgaaDescr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvMgau.MgauCodCompl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvMgrg.MgrgId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvPkan.PkanDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvPkar.PkarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MgmvUsr.UsrLogin)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MgmvId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MgmvId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MgmvId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

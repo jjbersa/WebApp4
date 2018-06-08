@@ -1,0 +1,87 @@
+﻿@model WebApp4.Models.MgMovimenti
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>MgMovimenti</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MgmvMgrgId" class="control-label"></label>
+                <select asp-for="MgmvMgrgId" class ="form-control" asp-items="ViewBag.MgmvMgrgId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvProg" class="control-label"></label>
+                <input asp-for="MgmvProg" class="form-control" />
+                <span asp-validation-for="MgmvProg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvMgaaId" class="control-label"></label>
+                <select asp-for="MgmvMgaaId" class ="form-control" asp-items="ViewBag.MgmvMgaaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvQuantita" class="control-label"></label>
+                <input asp-for="MgmvQuantita" class="form-control" />
+                <span asp-validation-for="MgmvQuantita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvIdRegDest" class="control-label"></label>
+                <input asp-for="MgmvIdRegDest" class="form-control" />
+                <span asp-validation-for="MgmvIdRegDest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvIdRegProv" class="control-label"></label>
+                <input asp-for="MgmvIdRegProv" class="form-control" />
+                <span asp-validation-for="MgmvIdRegProv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvCodUbi" class="control-label"></label>
+                <input asp-for="MgmvCodUbi" class="form-control" />
+                <span asp-validation-for="MgmvCodUbi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvMgauId" class="control-label"></label>
+                <select asp-for="MgmvMgauId" class ="form-control" asp-items="ViewBag.MgmvMgauId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvPkanId" class="control-label"></label>
+                <select asp-for="MgmvPkanId" class ="form-control" asp-items="ViewBag.MgmvPkanId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvDataIns" class="control-label"></label>
+                <input asp-for="MgmvDataIns" class="form-control" />
+                <span asp-validation-for="MgmvDataIns" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvUsrId" class="control-label"></label>
+                <select asp-for="MgmvUsrId" class ="form-control" asp-items="ViewBag.MgmvUsrId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvPkarId" class="control-label"></label>
+                <select asp-for="MgmvPkarId" class ="form-control" asp-items="ViewBag.MgmvPkarId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgmvNote" class="control-label"></label>
+                <input asp-for="MgmvNote" class="form-control" />
+                <span asp-validation-for="MgmvNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,107 @@
+﻿@model PaginatedList<WebApp4.Models.MgAnaArt>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*@model IEnumerable<WebApp4.Models.MgAnaArt>
+
+    @{
+        ViewData["Title"] = "Index";
+    }*@
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.MgaaMbdcClasse)*@
+                Class
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.MgaaMatricola)*@
+                Code
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.MgaaDescr)*@
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Description</a>
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.MgaaNote)*@
+                Note
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.MgaaDataIns)*@
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Date Ins</a>
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.MgaaDataUltMod)*@
+                Date Mod
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MgaaMbdcClasse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MgaaMatricola)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MgaaDescr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MgaaNote)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MgaaDataIns)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MgaaDataUltMod)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.MgaaId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.MgaaId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.MgaaId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-page="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

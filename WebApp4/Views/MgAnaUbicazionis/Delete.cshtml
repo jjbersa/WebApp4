@@ -1,0 +1,99 @@
+﻿@model WebApp4.Models.MgAnaUbicazioni
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MgAnaUbicazioni</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauCodice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauCodice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauCodCompl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauCodCompl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauDescr)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauDescr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauTreeCtrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauTreeCtrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauDataIns)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauDataIns)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauLivello)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauLivello)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauProfondita)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauProfondita)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauLarghezza)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauLarghezza)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauAltezza)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauAltezza)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauBloccata)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauBloccata)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauPrenotata)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauPrenotata)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauUbiDef)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauUbiDef)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MgauMbmg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MgauMbmg.MbmgCode)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MgauId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

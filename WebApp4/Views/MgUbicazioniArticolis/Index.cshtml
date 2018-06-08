@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApp4.Models.MgUbicazioniArticoli>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MguaMbmg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MguaMgaa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MguaMgau)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MguaMbmg.MbmgCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MguaMgaa.MgaaDescr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MguaMgau.MgauCodCompl)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MguaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MguaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MguaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+﻿@model WebApp4.Models.MgRegistrazioni
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>MgRegistrazioni</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MgrgMbmgId" class="control-label"></label>
+                <select asp-for="MgrgMbmgId" class ="form-control" asp-items="ViewBag.MgrgMbmgId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgrgMbcsId" class="control-label"></label>
+                <select asp-for="MgrgMbcsId" class ="form-control" asp-items="ViewBag.MgrgMbcsId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgrgData" class="control-label"></label>
+                <input asp-for="MgrgData" class="form-control" />
+                <span asp-validation-for="MgrgData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgrgNum" class="control-label"></label>
+                <input asp-for="MgrgNum" class="form-control" />
+                <span asp-validation-for="MgrgNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgrgDocRif" class="control-label"></label>
+                <input asp-for="MgrgDocRif" class="form-control" />
+                <span asp-validation-for="MgrgDocRif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgrgDataRif" class="control-label"></label>
+                <input asp-for="MgrgDataRif" class="form-control" />
+                <span asp-validation-for="MgrgDataRif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgrgCreationUserUsrId" class="control-label"></label>
+                <select asp-for="MgrgCreationUserUsrId" class ="form-control" asp-items="ViewBag.MgrgCreationUserUsrId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgrgLastEditUserUsrId" class="control-label"></label>
+                <select asp-for="MgrgLastEditUserUsrId" class ="form-control" asp-items="ViewBag.MgrgLastEditUserUsrId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

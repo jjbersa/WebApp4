@@ -1,0 +1,101 @@
+﻿@model IEnumerable<WebApp4.Models.PkArticoli>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkarQtaPick)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkarQtaSca)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.PkarMgrgId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkarMgmvProg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkarCodice)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.PkarNote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PkarTransferred)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkarMbcs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkarMbmg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkarMgaa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkarMgau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkarPkan)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarQtaPick)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarQtaSca)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.PkarMgrgId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarMgmvProg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarCodice)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarTransferred)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarMbcs.MbcsCaus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarMbmg.MbmgCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarMgaa.MgaaDescr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarMgau.MgauCodCompl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkarPkan.PkanDesc)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PkarId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PkarId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PkarId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

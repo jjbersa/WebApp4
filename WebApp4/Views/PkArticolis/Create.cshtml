@@ -1,0 +1,80 @@
+﻿@model WebApp4.Models.PkArticoli
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>PkArticoli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PkarPkanId" class="control-label"></label>
+                <select asp-for="PkarPkanId" class ="form-control" asp-items="ViewBag.PkarPkanId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarMgaaId" class="control-label"></label>
+                <select asp-for="PkarMgaaId" class ="form-control" asp-items="ViewBag.PkarMgaaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarQtaPick" class="control-label"></label>
+                <input asp-for="PkarQtaPick" class="form-control" />
+                <span asp-validation-for="PkarQtaPick" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarMbmgId" class="control-label"></label>
+                <select asp-for="PkarMbmgId" class ="form-control" asp-items="ViewBag.PkarMbmgId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarMbcsId" class="control-label"></label>
+                <select asp-for="PkarMbcsId" class ="form-control" asp-items="ViewBag.PkarMbcsId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarMgauId" class="control-label"></label>
+                <select asp-for="PkarMgauId" class ="form-control" asp-items="ViewBag.PkarMgauId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarMgrgId" class="control-label"></label>
+                <input asp-for="PkarMgrgId" class="form-control" />
+                <span asp-validation-for="PkarMgrgId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarMgmvProg" class="control-label"></label>
+                <input asp-for="PkarMgmvProg" class="form-control" />
+                <span asp-validation-for="PkarMgmvProg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarCodice" class="control-label"></label>
+                <input asp-for="PkarCodice" class="form-control" />
+                <span asp-validation-for="PkarCodice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PkarNote" class="control-label"></label>
+                <input asp-for="PkarNote" class="form-control" />
+                <span asp-validation-for="PkarNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="PkarTransferred" /> @Html.DisplayNameFor(model => model.PkarTransferred)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

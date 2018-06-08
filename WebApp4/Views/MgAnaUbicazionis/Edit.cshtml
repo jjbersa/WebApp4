@@ -1,0 +1,65 @@
+﻿@model WebApp4.Models.MgAnaUbicazioni
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>MgAnaUbicazioni</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MgauId" />
+            <div class="form-group">
+                <label asp-for="MgauMbmgId" class="control-label"></label>
+                <select asp-for="MgauMbmgId" class="form-control" asp-items="ViewBag.MgauMbmgId"></select>
+                <span asp-validation-for="MgauMbmgId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgauCodice" class="control-label"></label>
+                <input asp-for="MgauCodice" class="form-control" />
+                <span asp-validation-for="MgauCodice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgauCodCompl" class="control-label"></label>
+                <input asp-for="MgauCodCompl" class="form-control" />
+                <span asp-validation-for="MgauCodCompl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgauDescr" class="control-label"></label>
+                <input asp-for="MgauDescr" class="form-control" />
+                <span asp-validation-for="MgauDescr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgauTreeCtrl" class="control-label"></label>
+                <input asp-for="MgauTreeCtrl" class="form-control" />
+                <span asp-validation-for="MgauTreeCtrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgauDataIns" class="control-label"></label>
+                <input asp-for="MgauDataIns" class="form-control" />
+                <span asp-validation-for="MgauDataIns" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MgauLivello" class="control-label"></label>
+                <input asp-for="MgauLivello" class="form-control" />
+                <span asp-validation-for="MgauLivello" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

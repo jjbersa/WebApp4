@@ -1,0 +1,90 @@
+﻿@model WebApp4.Models.PkArticoli
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PkArticoli</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarQtaPick)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarQtaPick)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarQtaSca)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarQtaSca)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarMgrgId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarMgrgId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarMgmvProg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarMgmvProg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarCodice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarCodice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarNote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarNote)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarTransferred)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarTransferred)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarMbcs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarMbcs.MbcsCaus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarMbmg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarMbmg.MbmgCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarMgaa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarMgaa.MgaaDescr)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarMgau)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarMgau.MgauCodCompl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PkarPkan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PkarPkan.PkanDesc)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PkarId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
