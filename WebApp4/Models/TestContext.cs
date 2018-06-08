@@ -96,7 +96,7 @@ namespace WebApp4.Models
 
                 entity.ToTable("MG_AnaArt");
 
-                entity.HasIndex(e => new { e.MgaaMbdcClasse, e.MgaaMatricola })
+                entity.HasIndex(e => new { e.MgaaMatricola })
                     .HasName("UQ_MG_AnaArt_1__35")
                     .IsUnique();
 
